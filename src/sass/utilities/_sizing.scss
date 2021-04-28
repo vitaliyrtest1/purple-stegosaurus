@@ -1,0 +1,9 @@
+@each $key, $size in $max-widths {
+  .maxw-#{$key} {
+    max-width: #{$size};
+  }
+}
+
+.width-full {
+  width: 100%;
+}

@@ -1,0 +1,29 @@
+// Styles for dark backgrounds
+.inverse {
+  color: $true-white;
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote {
+    color: inherit;
+  }
+
+  .button--secondary {
+    background-color: transparent;
+    border-color: $true-white;
+    color: $true-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $true-white;
+      border-color: $true-white;
+      color: $true-black;
+    }
+  }
+}

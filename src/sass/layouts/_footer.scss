@@ -1,0 +1,44 @@
+.footer__col {
+  &.cell-lg {
+    @include media-breakpoint-up(lg) {
+      max-width: 16.5em;
+    }
+  }
+
+  &.cell-md {
+    @include media-breakpoint-up(lg) {
+      max-width: 11.25em;
+    }
+  }
+}
+
+.footer__logo {
+  display: block;
+}
+
+.footer__title {
+  .inverse & {
+    color: $gray-500;
+    font-weight: normal;
+  }
+}
+
+.footer__menu,
+.footer__social,
+.footer__links {
+  a {
+    &:not(.button) {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity .25s;
+
+      &:hover {
+        opacity: .85;
+      }
+    }
+  }
+}
+
+.footer__bottom {
+  font-size: 0.75em;
+}

@@ -1,0 +1,136 @@
+.button {
+  align-items: center;
+  background-color: $vivid-blue;
+  border: 1px solid $vivid-blue;
+  border-radius: $border-radius-small;
+  box-sizing: border-box;
+  color: $true-white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1em;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.25;
+  padding: 0.5625em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: .25s ease;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($vivid-blue, 5%);
+    border-color: darken($vivid-blue, 5%);
+    outline: 0;
+    text-decoration: none;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border-color: $true-black;
+    color: $true-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $true-black;
+      border-color: $true-black;
+      color: $true-white;
+    }
+  }
+
+  &--clear {
+    background: 0;
+    border: 0;
+    color: inherit;
+    padding: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: 0;
+      border: 0;
+      color: inherit;
+      opacity: .85;
+    }
+  }
+
+  &--icon {
+    padding: 0.5625em;
+
+    &.button--clear {
+      font-size: 1.5em;
+      height: 1.25em;
+      line-height: 1.25em;
+      padding: 0;
+      width: 1.25em;
+    }
+  }
+}
+
+// Button groups
+.button-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    &:not(.button) {
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity .25s;
+
+      &:hover {
+        opacity: .85;
+      }
+    }
+  }
+
+  a,
+  .btn {
+    margin: 0 1em 1em 0;
+  }
+}
+
+.text-center {
+  .button-group {
+    justify-content: center;
+  
+    a,
+    .btn {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+@each $breakpoint in map-keys($media-breakpoints) {
+  $infix: "#{$breakpoint}";
+
+  @include media-breakpoint-up($breakpoint) {
+    .text-#{$infix}-left {
+      .button-group {
+        justify-content: flex-start;
+
+        a,
+        .btn {
+          margin-left: 0;
+          margin-right: 1em;
+        }
+      }
+    }
+
+    .text-#{$infix}-center {
+      .button-group {
+        justify-content: center;
+      
+        a,
+        .btn {
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}

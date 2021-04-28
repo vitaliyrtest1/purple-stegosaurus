@@ -1,0 +1,29 @@
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@each $breakpoint in map-keys($media-breakpoints) {
+  $infix: "#{$breakpoint}";
+
+  @include media-breakpoint-up($breakpoint) {
+    .text-#{$infix}-left {
+      text-align: left;
+    }
+
+    .text-#{$infix}-right {
+      text-align: right;
+    }
+
+    .text-#{$infix}-center {
+      text-align: center;
+    }
+  }
+}
